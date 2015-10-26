@@ -1,0 +1,23 @@
+{
+  "name": "nativescript-dialog",
+  "version": "0.0.1",
+  "description": "A NativeScript plugin for iOS and Android that allows you to create custom dialog.",
+  "main": "index.js",
+  "nativescript": {
+    "id": "org.nativescript.dialog"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/enchev/nativescript-dialog"
+  },
+  "keywords": [
+    "NativeScript",
+    "dialog",
+    "custom",
+	"alert"
+  ],
+  "author": "Vladimir Enchev <vladimir.enchev@gmail.com> (https://github.com/enchev)",
+  "license": "Apache-2.0",
+  "bugs": "https://github.com/enchev/nativescript-dialog/issues",
+  "homepage": "https://github.com/enchev/nativescript-dialog"
+}
