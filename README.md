@@ -38,6 +38,10 @@ exports.buttonTap = function(args){
 	message: "Please wait!", 
 	cancelButtonText: "Cancel", 
 	nativeView: nativeView}
-  ).then(function(r){ console.log("Result: " + r); }, function(e){console.log("Error: " + e)});
+  ).then(function(r){ console.log("Result: " + r); }, 
+  function(e){console.log("Error: " + e)});
 }
 ```
+iOS | Android
+------------ | -------------
+![iOS](/ios.png) | ![Android](/android.png)
