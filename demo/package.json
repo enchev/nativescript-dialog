@@ -1,0 +1,12 @@
+{
+	"nativescript": {
+		"id": "org.nativescript.demo",
+		"tns-android": {
+			"version": "1.4.0"
+		}
+	},
+	"dependencies": {
+		"nativescript-dialog": "0.0.2",
+		"tns-core-modules": "1.4.0"
+	}
+}
