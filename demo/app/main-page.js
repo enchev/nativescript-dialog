@@ -41,8 +41,7 @@ exports.showCustomSwitchDialog = function(args){
       if(r){
         dialog.show({
           title: "Result",
-          message: "You've pressed OK button and the switch is " +
-            ((platform.device.os === platform.platformNames.ios) ? options.nativeView.on : options.nativeView.isChecked()) ? "checked" : "not checked"),
+          message: "You've pressed OK button and the switch is " + isChecked(options.nativeView) ? "checked" : "not checked"),
           okButtonText: "Close"
         });
       } else {
@@ -54,4 +53,13 @@ exports.showCustomSwitchDialog = function(args){
       dialog.show({title: "Error", message: "Error: " + e, okButtonText: "Close"});
     }
   );
+}
+
+function isChecked(nativeView){
+  if(platform.device.os === platform.platformNames.ios){
+    return nativeView.on;
+  } else if(platform.device.os === platform.platformNames.android) {
+    return nativeView.isChecked();
+  }
+  return undefined;
 }
