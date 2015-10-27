@@ -41,7 +41,8 @@ exports.showCustomSwitchDialog = function(args){
       if(r){
         dialog.show({
           title: "Result",
-          message: "You've pressed OK button and the switch is " + (options.nativeView.on || options.nativeView.isChecked() ? "checked" : "not checked"),
+          message: "You've pressed OK button and the switch is " +
+            (platform.device.os === platform.platformNames.ios ? options.nativeView.on : options.nativeView.isChecked()) ? "checked" : "not checked"),
           okButtonText: "Close"
         });
       } else {
