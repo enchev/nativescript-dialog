@@ -6,9 +6,27 @@ exports.show = function (options) {
 
                 if (options.nativeView instanceof UIView) {
                     alert.contentView.addSubview(options.nativeView);
-                    options.nativeView.centerXAnchor.constraintEqualToAnchor(alert.contentView.centerXAnchor).active = true;
-                    options.nativeView.topAnchor.constraintEqualToAnchor(alert.contentView.topAnchor).active = true;
-                    options.nativeView.bottomAnchor.constraintEqualToAnchor(alert.contentView.bottomAnchor).active = true;
+
+                    if(options.nativeView.centerXAnchor) {
+                      options.nativeView.translatesAutoresizingMaskIntoConstraints = false;
+                      options.nativeView.centerXAnchor.constraintEqualToAnchor(alert.contentView.centerXAnchor).active = true;
+                      options.nativeView.topAnchor.constraintEqualToAnchor(alert.contentView.topAnchor).active = true;
+                      options.nativeView.bottomAnchor.constraintEqualToAnchor(alert.contentView.bottomAnchor).active = true;
+                    } else {
+                      var xCenterConstraint = NSLayoutConstraint.constraintWithItemAttributeRelatedByToItemAttributeMultiplierConstant(options.nativeView, NSLayoutAttributeCenterX, NSLayoutRelationEqual, alert.contentView, NSLayoutAttributeCenterX, 1.0, 0);
+                      alert.contentView.addConstraint(xCenterConstraint);
+
+                      var yCenterConstraint = NSLayoutConstraint.constraintWithItemAttributeRelatedByToItemAttributeMultiplierConstant(options.nativeView, NSLayoutAttributeCenterY, NSLayoutRelationEqual, alert.contentView, NSLayoutAttributeCenterX, 1.0, 0);
+                      alert.contentView.addConstraint(yCenterConstraint);
+
+                      var views = {"newView": options.nativeView};
+
+                      var widthConstraints = NSLayoutConstraint.constraintsWithVisualFormatOptionsMetricsViews("H:[newView(100)]", 0, null, views);
+                      alert.contentView.addConstraints(widthConstraints);
+
+                      var heightConstraints = NSLayoutConstraint.constraintsWithVisualFormatOptionsMetricsViews("V:[newView(100)]", 0, null, views);
+                      alert.contentView.addConstraints(heightConstraints);
+                    }
                 }
 
                 if (options.cancelButtonText) {

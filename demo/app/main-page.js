@@ -7,7 +7,6 @@ exports.showLoadingDialog = function(args){
 
   if(platform.device.os === platform.platformNames.ios){
 	nativeView = UIActivityIndicatorView.alloc().initWithActivityIndicatorStyle(UIActivityIndicatorViewStyle.UIActivityIndicatorViewStyleGray);
-    nativeView.translatesAutoresizingMaskIntoConstraints = false;
     nativeView.startAnimating();
   } else if(platform.device.os === platform.platformNames.android){
 	nativeView = new android.widget.ProgressBar(application.android.currentContext);
