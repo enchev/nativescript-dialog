@@ -1,3 +1,5 @@
+var result;
+
 exports.show = function (options) {
     return new Promise(function (resolve, reject) {
         try {
@@ -50,10 +52,27 @@ exports.show = function (options) {
                         }));
                 }
 
+
+                result = {};
+                result.resolve = resolve,
+                result.dialog = alert;
                 alert.presentWithAnimatedCompletion(true, null);
             }
         } catch (ex) {
             reject(ex);
         }
     });
+}
+
+exports.close = function () {
+  if(result){
+
+    if(result.dialog instanceof SDCAlertController){
+      result.dialog.dismissWithAnimatedCompletion(true, null);
+    }
+
+    if(result.resolve instanceof Function){
+      result.resolve(true);
+    }
+  }
 }
