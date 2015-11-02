@@ -9,7 +9,7 @@
 		}
 	},
 	"dependencies": {
-		"nativescript-dialog": "0.0.2",
+		"nativescript-dialog": "0.0.4",
 		"tns-core-modules": "1.4.0"
 	}
 }
