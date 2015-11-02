@@ -2,7 +2,7 @@ var platform = require("platform");
 var application = require("application");
 var dialog = require("nativescript-dialog");
 
-exports.showLoadingDialog = function(args){
+function showLoadingDialog(){
   var nativeView;
 
   if(platform.device.os === platform.platformNames.ios){
@@ -17,13 +17,26 @@ exports.showLoadingDialog = function(args){
 	title: "Loading...",
 	message: "Please wait!",
 	cancelButtonText: "Cancel",
-	nativeView: nativeView}
+	nativeView: nativeView,
+}
   ).then(function(r){
-    // Cancel loading here
+    dialog.show({title: "Message", message: "Loading  " + (r ? "finished!" : "aborted!"), okButtonText: "Close"});
   },
   function(e){
     dialog.show({title: "Error", message: "Error: " + e, okButtonText: "Close"});
   });
+}
+
+exports.showLoadingDialog = function(args){
+  showLoadingDialog();
+}
+
+exports.closeLoadingDialog = function(args){
+  showLoadingDialog();
+
+  setTimeout(function(){
+    dialog.close();
+  }, 3000);
 }
 
 exports.showCustomSwitchDialog = function(args){

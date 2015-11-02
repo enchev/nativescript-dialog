@@ -1,6 +1,7 @@
 <Page>
    <StackLayout>
      <Button text="Show loading dialog" tap="showLoadingDialog" />
+     <Button text="Close loading dialog" tap="closeLoadingDialog" />
      <Button text="Show custom dialog with Switch" tap="showCustomSwitchDialog" />
    </StackLayout>
 </Page>
