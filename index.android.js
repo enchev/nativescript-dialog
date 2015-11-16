@@ -6,8 +6,14 @@ exports.show = function (options) {
         try {
             if (options) {
                 var alert = new android.app.AlertDialog.Builder(application.android.currentContext);
-                alert.setTitle(options.title || "");
-                alert.setMessage(options.message || "");
+
+                if (options.message) {
+                  alert.setMessage(options.message);
+                }
+
+                if (options.title) {
+                  alert.setTitle(options.title);
+                }
 
                 if (options.nativeView instanceof android.view.View) {
                     alert.setView(options.nativeView);
