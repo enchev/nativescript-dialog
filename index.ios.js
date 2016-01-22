@@ -1,10 +1,12 @@
+var dialogsCommon = require("ui/dialogs/dialogs-common");
+
 var result;
 
 exports.show = function (options) {
     return new Promise(function (resolve, reject) {
         try {
             if (options) {
-                var alert = SDCAlertController.alloc().initWithTitleMessage(NSAttributedString.alloc().initWithString(options.title || ""), NSAttributedString.alloc().initWithString(options.message || ""));
+                var alert = SDCAlertController.alloc().initWithTitleMessagePreferredStyle(options.title || "", options.message || "", AlertControllerStyle.Alert);
 
                 if (options.nativeView instanceof UIView) {
                     alert.contentView.addSubview(options.nativeView);
@@ -56,7 +58,16 @@ exports.show = function (options) {
                 result = {};
                 result.resolve = resolve,
                 result.dialog = alert;
-                alert.presentWithAnimatedCompletion(true, null);
+
+                if (alert) {
+                  var currentPage = dialogsCommon.getCurrentPage();
+                  if (currentPage) {
+                    var viewController = currentPage.ios;
+                    if (viewController) {
+                      viewController.presentViewControllerAnimatedCompletion(alert, true, null);
+                    }
+                  }
+                }
             }
         } catch (ex) {
             reject(ex);
@@ -68,7 +79,7 @@ exports.close = function () {
   if(result){
 
     if(result.dialog instanceof SDCAlertController){
-      result.dialog.dismissWithAnimatedCompletion(true, null);
+      result.dialog.dismissAnimatedCompletion(true, null);
     }
 
     if(result.resolve instanceof Function){
