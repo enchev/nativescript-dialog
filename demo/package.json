@@ -1,15 +1,12 @@
 {
-  "nativescript": {
-    "id": "org.nativescript.demo",
-    "tns-android": {
-      "version": "1.6.3"
-    },
-    "tns-ios": {
-      "version": "1.6.0"
-    }
-  },
-  "dependencies": {
-    "nativescript-dialog": "0.0.5",
-    "tns-core-modules": "1.6.2"
-  }
+	"nativescript": {
+		"id": "org.nativescript.demo",
+		"tns-android": {
+			"version": "1.7.1"
+		}
+	},
+	"dependencies": {
+		"nativescript-dialog": "0.0.6",
+		"tns-core-modules": "1.7.1"
+	}
 }
