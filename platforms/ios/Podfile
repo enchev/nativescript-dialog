@@ -1,1 +1,1 @@
-pod 'SDCAlertView'
+pod 'SDCAlertView', '~> 4.0.1' 
