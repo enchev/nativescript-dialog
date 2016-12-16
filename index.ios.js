@@ -34,21 +34,21 @@ exports.show = function (options) {
                 }
 
                 if (options.cancelButtonText) {
-                    alert.addAction(SDCAlertAction.alloc().initWithTitleStyleHandler(options.cancelButtonText,
+                    alert.add(SDCAlertAction.alloc().initWithTitleStyleHandler(options.cancelButtonText,
                         SDCAlertActionStyle.Default, function (args) {
                             resolve(false);
                         }));
                 }
 
                 if (options.neutralButtonText) {
-                    alert.addAction(SDCAlertAction.alloc().initWithTitleStyleHandler(options.neutralButtonText,
+                    alert.add(SDCAlertAction.alloc().initWithTitleStyleHandler(options.neutralButtonText,
                         SDCAlertActionStyle.Default, function (args) {
                             resolve(undefined);
                         }));
                 }
 
                 if (options.okButtonText) {
-                    alert.addAction(SDCAlertAction.alloc().initWithTitleStyleHandler(options.okButtonText,
+                    alert.add(SDCAlertAction.alloc().initWithTitleStyleHandler(options.okButtonText,
                         SDCAlertActionStyle.Default, function (args) {
                             resolve(true);
                         }));
