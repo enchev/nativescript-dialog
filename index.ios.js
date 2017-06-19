@@ -77,13 +77,12 @@ exports.show = function (options) {
 
 exports.close = function () {
   if(result){
-
-    if(result.dialog instanceof SDCAlertController){
-      result.dialog.dismissAnimatedCompletion(true, null);
-    }
-
-    if(result.resolve instanceof Function){
-      result.resolve(true);
-    }
+	  if(result.dialog instanceof SDCAlertController){
+		  result.dialog.dismissViewControllerAnimatedCompletion(true, function() {
+			  if(result.resolve instanceof Function){
+				  result.resolve(true);
+			  }
+		  });
+	  }
   }
 }
