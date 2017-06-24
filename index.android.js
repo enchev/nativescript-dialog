@@ -11,6 +11,10 @@ exports.show = function (options) {
                   alert.setMessage(options.message);
                 }
 
+                if (options.cancelable === false) {
+                    alert.setCancelable(false);
+                }
+
                 if (options.title) {
                   alert.setTitle(options.title);
                 }
