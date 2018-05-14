@@ -1,6 +1,6 @@
 {
   "name": "nativescript-dialog",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A NativeScript plugin for iOS and Android that allows you to create custom dialog.",
   "main": "index.js",
   "nativescript": {
