@@ -1,7 +1,7 @@
 import * as application from "application";
 let result;
 
-declare var ios, SDCAlertController, UIView, NSLayoutConstraint, SDCAlertAction, SDCAlertActionStyle, dialogsCommon;
+declare var ios, SDCAlertController, SDCAlertControllerStyle, UIView, NSLayoutConstraint, NSLayoutAttributeCenterX, NSLayoutAttributeCenterY, NSLayoutRelationEqual, SDCAlertAction, SDCAlertActionStyle, dialogsCommon;
 interface alertOptions{
     title: string;
     message: string;
@@ -9,7 +9,7 @@ interface alertOptions{
     cancelButtonText: string;
     neutralButtonText: string;
     okButtonText: string;
-    CancelAllowed: boolean;
+    cancelAllowed: boolean;
 }
 
 export function show (options: alertOptions) {

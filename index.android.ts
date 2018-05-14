@@ -9,7 +9,7 @@ interface alertOptions{
     cancelButtonText: string;
     neutralButtonText: string;
     okButtonText: string;
-    CancelAllowed: boolean;
+    cancelAllowed: boolean;
 }
 
 export function show(options: alertOptions) {
@@ -56,6 +56,10 @@ export function show(options: alertOptions) {
           							resolve(true);
           						}
           					}));
+                }
+
+                if(options.cancelAllowed != undefined){
+                    alert.setCancelable(options.cancelAllowed);
                 }
 
                 result = {};

@@ -12,18 +12,22 @@
   },
   "keywords": [
     "NativeScript",
-	"native",
-	"script",
+    "native",
+    "script",
     "dialog",
     "custom",
-	"alert",
-	"UIAlertView",
-	"UIAlertController",
-	"ios",
-	"android"
+    "alert",
+    "UIAlertView",
+    "UIAlertController",
+    "ios",
+    "android"
   ],
   "author": "Vladimir Enchev <vladimir.enchev@gmail.com> (https://github.com/enchev)",
   "license": "Apache-2.0",
   "bugs": "https://github.com/enchev/nativescript-dialog/issues",
-  "homepage": "https://github.com/enchev/nativescript-dialog"
+  "homepage": "https://github.com/enchev/nativescript-dialog",
+  "dependencies": {
+    "tns-core-modules": "^4.0.0",
+    "tns-platform-declarations": "^4.0.0"
+  }
 }

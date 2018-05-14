@@ -5,7 +5,7 @@ interface alertOptions{
     cancelButtonText: string;
     neutralButtonText: string;
     okButtonText: string;
-    CancelAllowed: boolean;
+    cancelAllowed: boolean;
 }
 
 export function show(options: alertOptions);
