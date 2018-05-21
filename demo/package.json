@@ -1,15 +1,20 @@
 {
-	"nativescript": {
-		"id": "org.nativescript.demo",
-		"tns-android": {
-			"version": "2.4.1"
-		},
-		"tns-ios": {
-			"version": "2.4.0"
-		}
-	},
-	"dependencies": {
-		"nativescript-dialog": "0.1.0",
-		"tns-core-modules": "2.4.3"
-	}
+  "nativescript": {
+    "id": "org.nativescript.demo",
+    "tns-android": {
+      "version": "4.0.1"
+    }
+  },
+  "dependencies": {
+    "nativescript-dialog": "github:runbb/nativescript-dialog",
+    "tns-core-modules": "~4.0.0"
+  },
+  "devDependencies": {
+    "babel-traverse": "6.26.0",
+    "babel-types": "6.26.0",
+    "babylon": "6.18.0",
+    "lazy": "1.0.11"
+  },
+  "author": "xlmnxp",
+  "license": "MIT"
 }

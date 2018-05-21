@@ -16,8 +16,8 @@ function showLoadingDialog(){
   dialog.show({
 	title: "Loading...",
 	message: "Please wait!",
-	cancelButtonText: "Cancel",
-	nativeView: nativeView,
+  nativeView: nativeView,
+  CancelAllowed: false
 }
   ).then(function(r){
     dialog.show({title: "Message", message: "Loading  " + (r ? "finished!" : "aborted!"), okButtonText: "Close"});
